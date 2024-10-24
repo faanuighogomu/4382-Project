@@ -1,7 +1,7 @@
-# import necessary packages
+# import packages
 import pandas as pd
 import numpy as np
-import seaborn as sns
+# import seaborn as sns
 import sklearn
 
 # load the work from home data
@@ -15,3 +15,7 @@ X = wfh_data[var]
 
 #output (dependent) variable, each record will have a value of either Anxiety, Burnout, Depression, or None
 y = wfh_data['Mental_Health_Condition']
+
+# split and train the data
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=42)
