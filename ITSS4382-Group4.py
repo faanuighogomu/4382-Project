@@ -192,7 +192,8 @@ vot_clf.fit(X_train, y_train)
 print("Test score for voting classifier is:" , vot_clf.score(X_test, y_test))
 
 # naive bayes example 1
-prediction_data = heart_data[(heart_data['age']>=30) & (heart_data['chol']>=300) & (heart_data['trestbps'] >=135) & (heart_data['oldpeak']>=3.0)]
+prediction_data = heart_data[(heart_data['age']>=30) & (heart_data['chol']>=300) 
+& (heart_data['trestbps'] >=135) & (heart_data['oldpeak']>=3.0)]
 X_prediction = prediction_data[['age', 'trestbps', 'chol', 'oldpeak']]
 y_prediction = prediction_data['target']
 
@@ -200,7 +201,8 @@ X = heart_data[['age', 'trestbps', 'chol', 'oldpeak']]
 Y = heart_data['target']
 
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split
+(X, y, test_size = 0.20, random_state=42)
 
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
@@ -214,7 +216,8 @@ for i, (prediction, actual) in enumerate(zip(y_pred, y_prediction)):
     print(f" Prediction data {i+1}: Predicted = {prediction}, actual = {actual}")
 
 # Naive Bayes example 2
-pred_data = heart_data[(heart_data['slope']>=2) & (heart_data['sex']==1) & (heart_data['exang'] ==1) & (heart_data['cp']>=3)]
+pred_data = heart_data[(heart_data['slope']>=2) & (heart_data['sex']==1) 
+& (heart_data['exang'] ==1) & (heart_data['cp']>=3)]
 X_pred = pred_data[['slope', 'sex', 'exang', 'cp']]
 y_pred_2 = pred_data['target']
 
